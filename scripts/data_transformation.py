@@ -2,6 +2,15 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+
+def normalize(df):
+    scaler = MinMaxScaler()
+    normalized_engagement = scaler.fit_transform(df)
+    normalized_df = pd.DataFrame(normalized_engagement, columns=df.columns)
+    return normalized_df
+
+
 def dimension_reduction(df):
     scaler = StandardScaler()
     numeric_columns = df.select_dtypes(include=['float64', 'int64'])
