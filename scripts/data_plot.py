@@ -22,6 +22,7 @@ def plot_bar(data, column):
     counts = data[column].value_counts()
     plt.figure(figsize=(12, 8))
     counts.plot(kind='bar', color='green')
+    plt.xticks(rotation=45, ha='right')
     plt.title(f'Frequency of {column}')
     plt.xlabel(column)
     plt.ylabel('Count')

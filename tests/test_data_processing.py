@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 import os
-from scripts.data_clean import remove_outliers, replace_null_value
+from scripts.data_cleaning import remove_outliers, replace_null_value
 
 def test_remove_outliers():
     data={
